@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shorten long URLs instantly and track click analytics with our modern URL Shortener." />
+  <title>URL Shortener — Shorten & Track Links</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ===== Animated Background Orbs ===== -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ===== Navigation Bar ===== -->
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <span class="logo-icon">🔗</span>
+      <span class="logo-text">Short<span class="accent">Link</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link active">Home</a>
+      <a href="/dashboard.html" class="nav-link">Dashboard</a>
+    </div>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
+  <main class="container">
+    <section class="hero" id="hero">
+      <div class="hero-badge">⚡ Fast & Free URL Shortener</div>
+      <h1 class="hero-title">
+        Shorten Your <span class="gradient-text">Long URLs</span>
+        <br />In Seconds
+      </h1>
+      <p class="hero-description">
+        Transform lengthy, unwieldy links into clean, shareable short URLs.
+        Track every click with built-in analytics.
+      </p>
+
+      <!-- ===== URL Input Form ===== -->
+      <form id="urlForm" class="url-form" autocomplete="off">
+        <div class="input-wrapper">
+          <span class="input-icon">🌐</span>
+          <input
+            type="text"
+            id="urlInput"
+            class="url-input"
+            placeholder="Paste your long URL here..."
+            aria-label="Enter your long URL"
+            required
+          />
+          <button type="submit" id="shortenBtn" class="shorten-btn">
+            <span class="btn-text">Shorten</span>
+            <span class="btn-icon">→</span>
+          </button>
+        </div>
+        <!-- Validation Error Message -->
+        <p id="errorMsg" class="error-msg" role="alert"></p>
+      </form>
+
+      <!-- ===== Result Card (hidden by default) ===== -->
+      <div id="resultCard" class="result-card hidden">
+        <div class="result-header">
+          <span class="result-icon">✅</span>
+          <span class="result-title">Your link is ready!</span>
+        </div>
+        <div class="result-body">
+          <div class="result-url-group">
+            <label class="result-label">Shortened URL</label>
+            <div class="result-url-row">
+              <a id="shortUrlLink" href="#" target="_blank" class="short-url-display"></a>
+              <button id="copyBtn" class="copy-btn" title="Copy to clipboard">
+                <span id="copyIcon">📋</span>
+              </button>
+            </div>
+          </div>
+          <div class="result-url-group">
+            <label class="result-label">Original URL</label>
+            <p id="originalUrlDisplay" class="original-url-display"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Features Section ===== -->
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Lightning Fast</h3>
+        <p>Generate short links instantly with no wait times.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Click Analytics</h3>
+        <p>Track how many times your links get clicked in real-time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Reliable & Persistent</h3>
+        <p>All links are stored securely and persist forever.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 ShortLink. Built with ❤️</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

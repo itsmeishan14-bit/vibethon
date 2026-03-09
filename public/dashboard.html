@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View analytics for all your shortened URLs — click counts, dates, and more." />
+    <title>Dashboard — ShortLink Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- ===== Animated Background Orbs ===== -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- ===== Navigation Bar ===== -->
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <span class="logo-icon">🔗</span>
+            <span class="logo-text">Short<span class="accent">Link</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/dashboard.html" class="nav-link active">Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- ===== Dashboard Content ===== -->
+    <main class="container">
+        <section class="dashboard-section">
+            <div class="dashboard-header">
+                <div>
+                    <h1 class="dashboard-title">📊 Link Analytics</h1>
+                    <p class="dashboard-subtitle">Track performance of all your shortened URLs</p>
+                </div>
+                <div class="dashboard-stats" id="dashboardStats">
+                    <div class="stat-card">
+                        <span class="stat-value" id="totalLinks">0</span>
+                        <span class="stat-label">Total Links</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="totalClicks">0</span>
+                        <span class="stat-label">Total Clicks</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Loading State ===== -->
+            <div id="loadingState" class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading your links...</p>
+            </div>
+
+            <!-- ===== Empty State ===== -->
+            <div id="emptyState" class="empty-state hidden">
+                <div class="empty-icon">📭</div>
+                <h3>No links yet</h3>
+                <p>Go to the <a href="/">home page</a> to shorten your first URL!</p>
+            </div>
+
+            <!-- ===== Links Table ===== -->
+            <div id="tableWrapper" class="table-wrapper hidden">
+                <table class="links-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Original URL</th>
+                            <th>Short URL</th>
+                            <th>Clicks</th>
+                            <th>Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="linksTableBody">
+                        <!-- Rows populated dynamically by dashboard.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <p>&copy; 2026 ShortLink. Built with ❤️</p>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
