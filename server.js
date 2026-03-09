@@ -25,6 +25,12 @@ app.use(express.json());
 // Parse URL-encoded form data
 app.use(express.urlencoded({ extended: true }));
 
+// ---- Logging Middleware ----
+app.use((req, res, next) => {
+    console.log(`[${new Date().toLocaleTimeString()}] ${req.method} ${req.url}`);
+    next();
+});
+
 // Serve static frontend files from the /public directory
 app.use(express.static(path.join(__dirname, 'public')));
 

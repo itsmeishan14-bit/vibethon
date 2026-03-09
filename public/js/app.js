@@ -105,7 +105,7 @@ urlForm.addEventListener('submit', async (e) => {
         urlInput.value = '';
     } catch (err) {
         console.error('Fetch error:', err);
-        showError('Network error. Please check your connection and try again.');
+        showError('Network error. If you are using Localtunnel, make sure your server is running and you have clicked "Bypass" on the tunnel welcome page.');
     } finally {
         // Reset button state
         btnText.textContent = originalText;
